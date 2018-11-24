@@ -24,12 +24,9 @@ for song in os.listdir('/app/songs'):
     res = round((1 - post/pre) * 100, 1)
     totals.append(res)
 
-    print(song)
-    print(f"COMPRESSION: {pre} -> {post}")
-    print(f"RESULT: {res}")
-    print()
+    print(f"{song[:-4]}: {res}%")
 
 avg = sum(totals) / len(totals)
 
 print('---------------')
-print(f"AVG: {avg}")
+print(f"AVG: {avg}%")

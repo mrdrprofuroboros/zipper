@@ -11,8 +11,8 @@ for song in os.listdir('/app/songs'):
         continue
 
     tmp = '/app/tmp.txt'
-    os.system(f"cat '/app/songs/{song}' | tr '[:upper:]' '[:lower:]' | sed -e 's/[,:;.!?]//g' > {tmp}")
-
+    os.system(f"cat '/app/songs/{song}' | sed 's/[[:upper:]]*/\L&/g' | sed -e 's/[,:;.!?]//g' | sed 'y/абвгджзийклмнопрстуфхыэе/abvgdjzijklmnoprstufhyee/' | sed 's/[ьъ]//g; s/ё/yo/g; s/ц/ts/g; s/ч/ch/g; s/ш/sh/g; s/щ/sh/g; s/ю/yu/g; s/я/ya/g' > {tmp}")
+    
     pre = subprocess.check_output(f"cat {tmp} | wc -c", shell=True)
     pre = int(pre)
 

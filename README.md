@@ -1,6 +1,6 @@
 # ZIPPER
 
-кладите ваши песенки в songs в формате .txt и
+Put your songs in /songs as .txt and run
 
 ~~~
 docker-compose up --build
@@ -9,7 +9,7 @@ docker-compose up --build
 ## Zero Point of View
 
 | Song | Repetitiveness |
-| ----------------------- | ----- |
+| ------- | ----- |
 | Friday Jazz | 5.5% |
 | Etude Full Minor | 8.7% |
 | Passion Book | 8.8% |

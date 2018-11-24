@@ -1,5 +1,7 @@
 # ZIPPER
 
+[original paper](https://pudding.cool/2017/05/song-repetition/)
+
 Put your songs in /songs as .txt and run
 
 ~~~

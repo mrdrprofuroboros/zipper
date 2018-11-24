@@ -1,5 +1,7 @@
 # ZIPPER
 
+кладите ваши песенки в songs в формате .txt и
+
 ~~~
-docker-compoe up --build
+docker-compose up --build
 ~~~

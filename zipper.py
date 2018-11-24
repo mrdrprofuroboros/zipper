@@ -10,11 +10,14 @@ for song in os.listdir('/app/songs'):
     if not song.endswith('txt'):
         continue
 
-    pre = subprocess.check_output(f"cat '/app/songs/{song}' | wc -c", shell=True)
+    tmp = '/app/tmp.txt'
+    os.system(f"cat '/app/songs/{song}' | tr '[:upper:]' '[:lower:]' | sed -e 's/[,:;.!?]//g' > {tmp}")
+
+    pre = subprocess.check_output(f"cat {tmp} | wc -c", shell=True)
     pre = int(pre)
 
-    literals = subprocess.check_output(f"./zopfli/zopfli -c --gzip '/app/songs/{song}' | ./infgen/infgen | grep literal", shell=True)
-    matches = subprocess.check_output(f"./zopfli/zopfli -c --gzip '/app/songs/{song}' | ./infgen/infgen | grep match", shell=True)
+    literals = subprocess.check_output(f"./zopfli/zopfli -c --gzip {tmp} | ./infgen/infgen | grep literal", shell=True)
+    matches = subprocess.check_output(f"./zopfli/zopfli -c --gzip {tmp} | ./infgen/infgen | grep match", shell=True)
     lit_cnt = 0
     for lit in literals.decode('utf-8').split('\n'):
         lit_cnt += len(lit[lit.find("'")+1:])

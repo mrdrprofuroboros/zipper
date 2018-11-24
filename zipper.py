@@ -29,7 +29,7 @@ for song in os.listdir('/app/songs'):
 
     print(f"{song[:-4]}: {res}%")
 
-avg = sum(totals) / len(totals)
+avg = round(sum(totals) / len(totals), 1)
 
 print('---------------')
 print(f"AVG: {avg}%")

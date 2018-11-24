@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  zipper:
+    container_name: zipper
+    image: zipper
+    build: .
+    network_mode: bridge
+    volumes:
+      - ./songs:/app/songs

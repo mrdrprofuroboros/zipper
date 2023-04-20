@@ -1,4 +1,5 @@
 # ZIPPER
+<img width="857" alt="Снимок экрана 2023-04-20 в 00 35 07" src="https://user-images.githubusercontent.com/21140507/233267784-1b99673f-26ac-4171-8907-503c0953590b.png">
 
 [original paper](https://pudding.cool/2017/05/song-repetition/)
 
